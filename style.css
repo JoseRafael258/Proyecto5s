@@ -1,176 +1,108 @@
-html{   /*diseño la página web*/
-  /*Añadimos imagen de fondo y ponemos que no se repita, que cubra toda la pagina, que nos siga al desplazarnos y que este centrado*/
-  background-image: url(img/bg.jpg);
-  background-repeat: no-repeat; /*Evita que se repita*/
-  background-size: cover; /*Cubre toda la pagina*/
-  background-attachment: fixed; /*Sigue la camara o el enfoque de esta*/
-  background-position: center;  /*Lo centra*/
-  color: #FFF; /*Color de fuente (blanco)*/
-  text-align: justify; /*Alineacion del texto justificada*/
-  font-family: "Geo", sans-serif; /*Cambio de fuente a Arial (resulta viendose mejor)*/
-  scroll-behavior: smooth; /*Hace un movimiento suave al deslizar*/
-  place-items: center;
+@keyframes bggray{
+    0%{
+        background-color: rgb(200, 200, 200); 
+    }
+    20%{
+        background-color: rgb(175, 175, 175);
+    }
+    40%{
+        background-color: rgb(150, 150, 150);
+    }
+    60%{
+        background-color: rgb(175, 175, 175);
+    }
+    100%{
+        background-color: rgb(200, 200, 200);
+    }
 }
-#logo{
-  width: 40px;
-  height: auto;
-  margin-right: 20px;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-header, footer{ /*Modificaciones al encabezado (logo) y algo del footer*/
-  background-color: #00379e;
-  font-size: 2.5em; /*Tamaño de fuente un poco mas grande*/
-  text-align: center; /*Centrado de texto*/
-  padding: 10px; /*Tamaño de altura*/
-  box-shadow: 0px 0px 10px #000000; /*Agrega una sombra junto a su color obscuro*/
-  font-weight: bold; /*Hace la letra en negritas*/
+html{
+    animation: bggray 10s infinite;
 }
 header{
-  font-family: 'bangers', sans sherif;
+    background-color: rgb(125, 125, 125);
+    display: flex;
+    align-items: center;
+    padding: 20px 5px;
+    width: 100vw;
+}
+#logo{
+    width: 40px;
+    height: auto;
+}
+header h1{
+    margin-left: 10px;
+    font-family: 'besley', sans-serif;
 }
 nav{
-  background-color: #0447c4;
-  text-align: center;
-  box-shadow: 0px 0px 10px #000000;
-  padding: 8px;
-  margin-bottom: 10px;
-  font-size: 20px;  
+    background-color: rgb(100, 100, 100);
+    padding: 10px 0px 10px 0px;
 }
 nav ul{
-    list-style: none; /*Elimina las viñetas en las listas*/
-    display: flex; /*Hace que estén en una sola fila todos los li*/
-    justify-content: center; /*Centra los objetos de la barra de nav*/
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
 }
-nav ul a li, nav ul a li :focus, nav ul a li :active{
-    text-decoration: none; /*Elimina el subrayado*/
-    color: #FFF;
-    margin-right: 20px /*Añade espaciado entre las opciones*/
+nav ul a{
+    text-decoration: none;
 }
-nav ul a li :last-child{    /*Evita que se haga el salto en el último item de lista*/
-    margin-right: 0px;
+nav ul a li{
+    color: #000; margin-right: 20px;
 }
-nav ul a :hover{   /*El hover sirve para cuando selecciones el mouse el item de lista se seleccione en este caso de azul*/
-    color: black;
-}
-footer{
-  font-size: 15px;
-  margin-top: 30px;
-  padding: 15px;
-}
-main, section, div{ /*Con este codigo centramos todo para que al momento de hacer zoom no se rompa*/
-  display: grid;
-  place-items: center;
+nav ul a li :last-child{
+    margin: 0px;
 }
 section{
-  font-size: 1.5em;
-  margin-top: 20px;
- background-color: #ff7e05;
-  padding: 20px;
-  color: #FFF;
-  box-shadow: 0px 0px 10px #000;
+    background-color: rgb(225, 225, 225);
+    margin: 20px 0 20px 0px;
+    box-shadow: 0px 0px 10px;
+    max-width: 1000px;
 }
-#s1{
-  background-color: #7a05ff;
+section :first-child{
+    margin-top: 40px;
 }
-#s2{
-  background-color: #e20303;
+section :last-child{
+    margin-bottom: 40px;
 }
-#s3{
-  background-color: rgb(164, 164, 0);
-}
-#s4{
-  background-color: #0F0;
-}
-#s5{
-  background-color: #00F;
+section h3{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'besley', sans-serif;
 }
 section div{
-  font-size: 30px;
-  margin-top: 0px;
-  background-color: #00000078;
-  color: #FFF;
-  box-shadow: 0px 0px 0px;
+    align-items: center;
 }
-div img{
-  width: 150px;
-  height: auto;
-  box-shadow: 0px 0px 5px #000;
+section div img{
+    width: 60px;
+    height: auto;
+    align-self: center;
+}
+section div p{
+    padding: 10px;
+    text-align: justify;
+    font-family: 'pridi', sans-serif;
 }
 .imgtext{
-  display: grid;
-  grid-template-columns: 150px 900px;
-}
-.imgtext p, .reverse p{
-  margin-left: 40px;
-  margin-right: 40px;
+    display: grid;
+    grid-template-columns: 70px auto;
 }
 .reverse{
-  display: grid;
-  grid-template-columns: 900px 150px;
+    display: grid;
+    grid-template-columns: auto 70px;
 }
-/*Añadimos soporte para móviles (achicamos todo)*/
-@media (max-width: 400px) {
-    div img{
-        width: 40px;
-        height: auto;
-        box-shadow: 0px 0px 3px #000;
-        margin-right: 0px;
-    }
-    section{
-      font-size: 1.5em;
-    }
-    .imgtext{
-        grid-template-columns: 40px auto;
-    }
-    .reverse{
-        grid-template-columns: auto 40px;
-    }
-    .imgtext p, .reverse p{
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-    nav{
-      font-size: 10px;
-    }
-    #logo{
-      width: 25px;
-      height: auto;
-      margin-right: 10px;
-    }
-    header{
-      font-size: 2em;
-    }
-    div p{
-      font-size: 10px;
-    }
-    footer{
-      font-size: 15px;
-    }
-    section{
-      padding: 5px;
-    }
-}
-
-/*Soporte para moviles más grandes (achicamos todo de manera leve)*/
-@media (max-width:700px){
-    div img{
-        width: 80px;
-        height: auto;
-        padding: 0px;
-    }
-    h3{
-        padding: 0px;
-        font-size: 40px;
-    }
-    section{
-        padding: 10px;
-    }
-    div p{
-        font-size: 20px;
-    }
-    .imgtext{
-        grid-template-columns: 100px auto;
-    }
-    .reverse{
-        grid-template-columns: auto 100px;
-    }
+footer{
+    background-color: rgb(125, 125, 125);
+    padding: 20px 5px;
+    text-align: center;
+    position: bottom;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+    font-family: 'pridi', sans-serif;
 }
